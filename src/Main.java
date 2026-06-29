@@ -6,19 +6,23 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         int[][] studentsAndMarks = {{91,75,88},{67,78,87},{98,99,96},{83,76,97},{53,65,55}};
 
-        double studentsAverage = averageMarkOfStudents(studentsAndMarks, 4);
-
+        for(int i = 0 ; i < studentsAndMarks.length; i++) {
+            double studentsAverage = averageMarkOfStudents(studentsAndMarks, i);
             if(studentsAverage > 95) {
-                System.out.println("Student got an A");
+                System.out.println("Student " + i + " got an A");
             } else if (studentsAverage > 90) {
-                System.out.println("Student got a B");
+                System.out.println("Student " + i + " got an B");
             } else if (studentsAverage > 80) {
-                System.out.println("Student got a C");
+                System.out.println("Student " + i + " got an C");
             } else if (studentsAverage > 70) {
-                System.out.println("Student got an E");
+                System.out.println("Student " + i + " got an E");
             } else if (studentsAverage < 60) {
-                System.out.println("Student got an F");
+                System.out.println("Student " + i + " got an F and failed the test");
             }
+        }
+
+
+
 
         }
     public static double averageMarkOfStudents(int[][] arr, int row) {
@@ -27,8 +31,7 @@ public class Main {
         for(int i = 0; i < arr[row].length; i++) {
             sum += arr[row][i];
         }
-        averageMark = sum / 3;
-        System.out.println(averageMark);
+        averageMark = sum / arr[row].length;
         return averageMark;
     }
 }
